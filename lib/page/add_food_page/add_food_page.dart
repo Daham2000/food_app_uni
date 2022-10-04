@@ -1,4 +1,7 @@
+import 'package:FoodApp/page/add_food_page/widgets/empty_card.dart';
+import 'package:FoodApp/page/add_food_page/widgets/next_meal_component.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../util/tab_util.dart';
 
@@ -17,8 +20,12 @@ class _AddFoodPageState extends State<AddFoodPage> {
           horizontal: TabUtil.horizontalPadding,
           vertical: TabUtil.verticalPadding),
       child: Column(
-        children: [
-          
+        children: const [
+          EmptyCard(),
+          SizedBox(
+            height: 20,
+          ),
+          NextMealComponent(),
         ],
       ),
     );
