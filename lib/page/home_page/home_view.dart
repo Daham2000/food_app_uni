@@ -1,8 +1,6 @@
-import 'package:FoodApp/util/color_util.dart';
 import 'package:FoodApp/util/tab_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../widgets/bottom_navi_bar.dart';
 import 'home_bloc.dart';
 import 'home_event.dart';
@@ -26,11 +24,24 @@ class _HomeViewState extends State<HomeView> {
             pre.selectedIndex != current.selectedIndex,
         builder: (ctx, state) {
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0,
+              title: Text(
+                TabUtil.appBarTitles.elementAt(state.selectedIndex ?? 0),
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+            ),
             body: Column(
               children: [
-                const SizedBox(height: 25,),
+                const SizedBox(
+                  height: 5,
+                ),
                 Center(
-                  child: TabUtil.tabPageOptions.elementAt(state.selectedIndex ?? 0),
+                  child: TabUtil.tabPageOptions
+                      .elementAt(state.selectedIndex ?? 0),
                 ),
               ],
             ),

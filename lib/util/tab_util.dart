@@ -12,10 +12,16 @@ class TabUtil {
   static IconData profileTab = Icons.person;
   static const List<Widget> tabPageOptions = <Widget>[
     AddFoodPage(),
-    SubscriptionPage(),
     FoodPage(),
+    SubscriptionPage(),
     ProfilePage(),
   ];
-  static const horizontalPadding = 8.0;
-  static const verticalPadding = 8.0;
+  static const List<String> appBarTitles = <String>[
+    "Dashboard",
+    "Meals",
+    "",
+    "",
+  ];
+  static const horizontalPadding = 13.0;
+  static const verticalPadding = 12.0;
 }

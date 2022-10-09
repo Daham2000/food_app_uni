@@ -9,7 +9,7 @@ class NextMealComponent extends StatelessWidget {
     return Container(
       height: 160,
       width: MediaQuery.of(context).size.width,
-      color: Color(0xFFF1F1F1),
+      color: const Color(0xFFF1F1F1),
       child: Column(
         children: [
           const SizedBox(
