@@ -1,3 +1,5 @@
+import 'package:FoodApp/page/food_page/widgets/food_card.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -37,7 +39,9 @@ class _FoodPageState extends State<FoodPage> {
             ],
           ),
           Column(
-            children: [Container()],
+            children: const [
+              FoodCard(),
+            ],
           )
         ],
       ),
