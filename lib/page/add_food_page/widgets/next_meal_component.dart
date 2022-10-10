@@ -7,7 +7,6 @@ class NextMealComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 160,
       width: MediaQuery.of(context).size.width,
       color: const Color(0xFFF1F1F1),
       child: Column(
@@ -38,15 +37,18 @@ class NextMealComponent extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(
-                Icons.emoji_food_beverage_sharp,
-                size: 100.0,
-              ),
-              Text("Preparing!")
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(
+                  Icons.emoji_food_beverage_sharp,
+                  size: 100.0,
+                ),
+                Text("Preparing!")
+              ],
+            ),
           )
         ],
       ),

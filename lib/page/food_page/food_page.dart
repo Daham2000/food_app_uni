@@ -13,6 +13,7 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,11 +39,68 @@ class _FoodPageState extends State<FoodPage> {
               ),
             ],
           ),
-          Column(
-            children: const [
-              FoodCard(),
-            ],
-          )
+          Container(
+            height: MediaQuery.of(context).size.height*0.7,
+            child: ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                FoodCard(
+                  imgLink:
+                      'https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg',
+                  type: 'Breakfast',
+                  price: '5000',
+                  days: 'Weekdays',
+                  size: 'Half',
+                  food: 'String Hoppers',
+                ),
+                FoodCard(
+                  imgLink:
+                      'https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg',
+                  type: 'Lunch',
+                  price: '3000',
+                  days: 'Weekend',
+                  size: 'Half',
+                  food: 'String Hoppers',
+                ),
+                FoodCard(
+                  imgLink:
+                      'https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg',
+                  type: 'Dinner',
+                  price: '700',
+                  days: 'Weekdays',
+                  size: 'Half',
+                  food: 'String Hoppers',
+                ),
+                FoodCard(
+                  imgLink:
+                      'https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg',
+                  type: 'Lunch',
+                  price: '3000',
+                  days: 'Weekend',
+                  size: 'Half',
+                  food: 'String Hoppers',
+                ),
+                FoodCard(
+                  imgLink:
+                  'https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg',
+                  type: 'Lunch',
+                  price: '3000',
+                  days: 'Weekend',
+                  size: 'Half',
+                  food: 'String Hoppers',
+                ),
+                FoodCard(
+                  imgLink:
+                  'https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg',
+                  type: 'Lunch',
+                  price: '3000',
+                  days: 'Weekend',
+                  size: 'Half',
+                  food: 'String Hoppers',
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

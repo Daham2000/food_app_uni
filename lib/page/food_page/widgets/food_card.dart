@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
 
 class FoodCard extends StatelessWidget {
-  const FoodCard({Key? key}) : super(key: key);
+  final String imgLink;
+  final String type;
+  final String food;
+  final String size;
+  final String days;
+  final String price;
+
+  const FoodCard(
+      {Key? key,
+      required this.imgLink,
+      required this.type,
+      required this.food,
+      required this.size,
+      required this.days,
+      required this.price})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: 8.0, horizontal: 4.0),
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.network(
-                "https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg",
+                imgLink,
                 height: 100,
               ),
               SizedBox(
@@ -29,28 +43,24 @@ class FoodCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        "Breakfast",
+                        type,
                         style: TextStyle(
                             fontSize: 16.0,
                             color: Colors.black,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "String Hoppers",
+                        food,
                         style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.deepOrangeAccent),
+                            fontSize: 12.0, color: Colors.deepOrangeAccent),
                       ),
                       Text(
-                        "Size: " + "Half",
-                        style: TextStyle(
-                            fontSize: 12.0, color: Colors.black),
+                        "Size: " + size,
+                        style: TextStyle(fontSize: 12.0, color: Colors.black),
                       ),
                       Text(
-                        "Days: " + "Weekdays",
-                        style: TextStyle(
-                            fontSize: 12.0, color: Colors.black),
+                        "Days: " + days,
+                        style: TextStyle(fontSize: 12.0, color: Colors.black),
                       ),
                       SizedBox(
                         height: 5.0,
@@ -58,16 +68,14 @@ class FoodCard extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Container(
+                          SizedBox(
                             child: Text(
-                              "Rs 5,000/Week",
+                              "Rs ${price}/Week",
                               textAlign: TextAlign.end,
                               style: TextStyle(
-                                  fontSize: 14.0,
-                                  color: Colors.black),
+                                  fontSize: 14.0, color: Colors.black),
                             ),
-                            width: MediaQuery.of(context).size.width *
-                                0.5,
+                            width: MediaQuery.of(context).size.width * 0.5,
                           ),
                         ],
                       )
