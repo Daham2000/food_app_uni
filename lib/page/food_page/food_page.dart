@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../util/tab_util.dart';
 import '../home_page/home_bloc.dart';
 import '../home_page/home_state.dart';
+import 'widgets/search_food_card.dart';
 
 class FoodPage extends StatefulWidget {
   const FoodPage({Key? key}) : super(key: key);
@@ -98,7 +99,34 @@ class _FoodPageState extends State<FoodPage> {
                                               color: Colors.grey[800]),
                                           hintText: "Type in your text",
                                           fillColor: Colors.white70),
-                                    )
+                                    ),
+                                    const SizedBox(
+                                      height: 7,
+                                    ),
+                                    SearchFoodCard(
+                                      img:
+                                          "https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg",
+                                      description:
+                                          "There are some foods you can try and smell here are some foods you can try and smell",
+                                      price: "Rs 400.00",
+                                      title: "Rice and Curry",
+                                    ),
+                                    SearchFoodCard(
+                                      img:
+                                      "https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg",
+                                      description:
+                                      "There are some foods you can try and smell, here are some foods you can try and smell",
+                                      price: "Rs 400.00",
+                                      title: "Rice and Curry",
+                                    ),
+                                    SearchFoodCard(
+                                      img:
+                                      "https://img.delicious.com.au/bQjDG77i/del/2021/07/spiced-peanut-butter-and-honey-pancakes-with-blackberry-cream-155151-2.jpg",
+                                      description:
+                                      "There are some foods you can try and smell here are some foods you can try and smell",
+                                      price: "Rs 400.00",
+                                      title: "Rice and Curry",
+                                    ),
                                   ],
                                 )),
                           )
