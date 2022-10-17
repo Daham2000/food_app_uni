@@ -14,6 +14,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         final data = event as ChangeEvent;
         yield state.clone(selectedIndex: data.index);
         break;
+
+      case SetEditMealsPage:
+        final data = event as SetEditMealsPage;
+        yield state.clone(isEditMealsPage: data.setPage);
+        break;
+
+      case SetSearchPageEvent:
+        final data = event as SetSearchPageEvent;
+        yield state.clone(isSearchFood: data.setPage);
+        break;
     }
   }
 }

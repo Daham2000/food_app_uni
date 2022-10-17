@@ -21,6 +21,8 @@ class _HomeViewState extends State<HomeView> {
     return BlocBuilder<HomeBloc, HomeState>(
         buildWhen: (pre, current) =>
             pre.error != current.error ||
+            pre.isEditMealsPage != current.isEditMealsPage ||
+            pre.isSearchFood != current.isSearchFood ||
             pre.selectedIndex != current.selectedIndex,
         builder: (ctx, state) {
           return Scaffold(
@@ -28,11 +30,31 @@ class _HomeViewState extends State<HomeView> {
               backgroundColor: Colors.white,
               elevation: 0,
               title: Text(
-                TabUtil.appBarTitles.elementAt(state.selectedIndex ?? 0),
+                state.isEditMealsPage!
+                    ? ""
+                    : TabUtil.appBarTitles.elementAt(state.selectedIndex ?? 0),
                 style: TextStyle(
                   color: Colors.black,
                 ),
               ),
+              leading: state.isEditMealsPage!
+                  ? InkWell(
+                      onTap: () {
+                        if(state.isSearchFood!){
+                          homeBloc.add(SetSearchPageEvent(false));
+                        }else{
+                          homeBloc.add(SetEditMealsPage(false));
+                        }
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.black,
+                        ),
+                      ),
+                    )
+                  : null,
             ),
             body: Column(
               children: [

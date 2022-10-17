@@ -1,4 +1,7 @@
+import 'package:FoodApp/page/home_page/home_event.dart';
 import 'package:flutter/material.dart';
+
+import '../../home_page/home_bloc.dart';
 
 class FoodCard extends StatelessWidget {
   final String imgLink;
@@ -7,6 +10,7 @@ class FoodCard extends StatelessWidget {
   final String size;
   final String days;
   final String price;
+  final HomeBloc homeBloc;
 
   const FoodCard(
       {Key? key,
@@ -15,75 +19,81 @@ class FoodCard extends StatelessWidget {
       required this.food,
       required this.size,
       required this.days,
-      required this.price})
+      required this.price,
+      required this.homeBloc})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.network(
-                imgLink,
-                height: 100,
-              ),
-              SizedBox(
-                width: 10.0,
-              ),
-              Column(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        type,
-                        style: TextStyle(
-                            fontSize: 16.0,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        food,
-                        style: TextStyle(
-                            fontSize: 12.0, color: Colors.deepOrangeAccent),
-                      ),
-                      Text(
-                        "Size: " + size,
-                        style: TextStyle(fontSize: 12.0, color: Colors.black),
-                      ),
-                      Text(
-                        "Days: " + days,
-                        style: TextStyle(fontSize: 12.0, color: Colors.black),
-                      ),
-                      SizedBox(
-                        height: 5.0,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          SizedBox(
-                            child: Text(
-                              "Rs ${price}/Week",
-                              textAlign: TextAlign.end,
-                              style: TextStyle(
-                                  fontSize: 14.0, color: Colors.black),
+    return InkWell(
+      onTap: () {
+        homeBloc.add(SetEditMealsPage(true));
+      },
+      child: Card(
+        elevation: 2,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.network(
+                  imgLink,
+                  height: 100,
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          type,
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          food,
+                          style: TextStyle(
+                              fontSize: 12.0, color: Colors.deepOrangeAccent),
+                        ),
+                        Text(
+                          "Size: " + size,
+                          style: TextStyle(fontSize: 12.0, color: Colors.black),
+                        ),
+                        Text(
+                          "Days: " + days,
+                          style: TextStyle(fontSize: 12.0, color: Colors.black),
+                        ),
+                        SizedBox(
+                          height: 5.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SizedBox(
+                              child: Text(
+                                "Rs ${price}/Week",
+                                textAlign: TextAlign.end,
+                                style: TextStyle(
+                                    fontSize: 14.0, color: Colors.black),
+                              ),
+                              width: MediaQuery.of(context).size.width * 0.5,
                             ),
-                            width: MediaQuery.of(context).size.width * 0.5,
-                          ),
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              )
-            ],
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
