@@ -32,7 +32,8 @@ class _HomeViewState extends State<HomeView> {
               title: Text(
                 state.isEditMealsPage!
                     ? ""
-                    : TabUtil.appBarTitles.elementAt(state.selectedIndex ?? 0),
+                    : TabUtil.appBarTitles
+                            .elementAt(state.selectedIndex ?? 0),
                 style: TextStyle(
                   color: Colors.black,
                 ),
@@ -40,9 +41,9 @@ class _HomeViewState extends State<HomeView> {
               leading: state.isEditMealsPage!
                   ? InkWell(
                       onTap: () {
-                        if(state.isSearchFood!){
+                        if (state.isSearchFood!) {
                           homeBloc.add(SetSearchPageEvent(false));
-                        }else{
+                        } else {
                           homeBloc.add(SetEditMealsPage(false));
                         }
                       },

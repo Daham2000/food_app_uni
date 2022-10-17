@@ -12,7 +12,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     switch (event.runtimeType) {
       case ChangeEvent:
         final data = event as ChangeEvent;
-        yield state.clone(selectedIndex: data.index);
+        yield state.clone(
+          selectedIndex: data.index,
+          isEditMealsPage: false,
+          isSearchFood: false,
+        );
         break;
 
       case SetEditMealsPage:

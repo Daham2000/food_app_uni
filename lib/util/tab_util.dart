@@ -1,9 +1,9 @@
+import 'package:FoodApp/page/payment_page/payment_view.dart';
 import 'package:flutter/material.dart';
 
 import '../page/add_food_page/add_food_page.dart';
 import '../page/food_page/food_page.dart';
 import '../page/profile_page/profile_page.dart';
-import '../page/subscription_page/subscription_page.dart';
 
 class TabUtil {
   static IconData homeTab = Icons.home;
@@ -13,13 +13,13 @@ class TabUtil {
   static const List<Widget> tabPageOptions = <Widget>[
     AddFoodPage(),
     FoodPage(),
-    SubscriptionPage(),
+    PaymentView(),
     ProfilePage(),
   ];
   static const List<String> appBarTitles = <String>[
     "Dashboard",
     "Meals",
-    "",
+    "Payment",
     "",
   ];
   static const horizontalPadding = 13.0;
